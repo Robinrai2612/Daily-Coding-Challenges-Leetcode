@@ -1,0 +1,16 @@
+class Solution:
+  def longestConsecutive(self, nums: List[int]) -> int:
+          arr=set(nums)
+          mx=0
+
+      # here if you will write for num in nums instead of arr which is a set then then 
+      #the runtime would be 10x slower. Try it yourself
+
+          for num in arr:
+              if num-1 not in arr:
+                  t=0
+                  while (num+t) in arr:
+                      t+=1
+                  mx=max(mx,t)
+          return mx  
+
